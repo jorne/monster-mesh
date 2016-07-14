@@ -1,7 +1,3 @@
-How to Monster Mesh
-===================
+Raspberry Pi Image Bootstrapper
 
-Look inside box for scripts to provision an sdcard image for running on a raspberry pi.
-
-Look inside mmesh for the lua based app that handles sound transmission.
-
+Based on the monster-mesh provision scripts, credits to xriss <kriss@XIXs.com>.

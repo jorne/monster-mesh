@@ -9,8 +9,6 @@ cd `dirname $0`
 #need to wait for box to be ready for login here
 
 ./06-box-setup.sh
-./07-mesh-setup.sh
-./08-mesh-app.sh
+# ./07-mesh-setup.sh
+# ./08-mesh-app.sh
 ./09-box-down.sh
-
-
