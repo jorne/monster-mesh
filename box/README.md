@@ -7,7 +7,7 @@ numbered scripts in this directory one after the other.
 	./00-run-all.sh
 
 This will all take some time (about 30mins for me) and finally create a 
-fully provisioned monster-mesh.img which can then be written to an SD 
+fully provisioned rpi.img which can then be written to an SD 
 card and booted on a Raspberry PI. Other useful scripts that can now be 
 run to further manipulate this image are.
 

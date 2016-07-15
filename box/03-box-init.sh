@@ -2,25 +2,25 @@ cd `dirname $0`
 
 THISDIR=`dirname $0`
 
-echo " creating monster-mesh.img "
+echo " creating rpi.img "
 
 
 echo " copying raspbian "
-cp raspbian.img monster-mesh.img
+cp raspbian.img rpi.img
 
 
 
 echo " resizing to 3gig "
-qemu-img resize -f raw monster-mesh.img 3G
+qemu-img resize -f raw rpi.img 3G
 
 echo " checking partition information "
 
-PART_BOOT_START=$(parted monster-mesh.img -ms unit s print | grep "^1" | cut -f 2 -d: | cut -f 1 -ds)
-PART_ROOT_START=$(parted monster-mesh.img -ms unit s print | grep "^2" | cut -f 2 -d: | cut -f 1 -ds)
+PART_BOOT_START=$(parted rpi.img -ms unit s print | grep "^1" | cut -f 2 -d: | cut -f 1 -ds)
+PART_ROOT_START=$(parted rpi.img -ms unit s print | grep "^2" | cut -f 2 -d: | cut -f 1 -ds)
 echo $PART_BOOT_START $PART_ROOT_START
 
 echo " resizing using fdisk "
-fdisk monster-mesh.img <<EOF
+fdisk rpi.img <<EOF
 p
 d
 2

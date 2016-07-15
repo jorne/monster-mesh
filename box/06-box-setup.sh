@@ -1,6 +1,6 @@
 cd `dirname $0`
 
-echo " building monster-mesh.img from default raspbian img "
+echo " building rpi.img from default raspbian img "
 
 echo " copying your id_rsa.pub to the pis authorised keys for auto login "
 ssh-keygen -f "$HOME/.ssh/known_hosts" -R [localhost]:5522

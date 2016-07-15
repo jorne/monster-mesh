@@ -2,7 +2,7 @@ cd `dirname $0`
 
 THISDIR=`dirname $0`
 
-echo " softboiling monster-mesh.img "
+echo " softboiling rpi.img "
 
 ./box-mount
 
