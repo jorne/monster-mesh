@@ -1,7 +1,24 @@
 cd `dirname $0`
 
-./01-download.sh
-./02-install.sh
+skip_host=0
+
+while getopts "hs" opt; do
+    case "$opt" in
+    h|\?)
+        echo "Help you!"
+        exit 0
+        ;;
+    s)  skip_host=1
+        ;;
+    esac
+done
+
+if [ $skip_host -eq 0 ]
+    then
+        ./01-host-install.sh
+fi
+exit 0
+./02-download.sh
 ./03-box-init.sh
 ./04-box-softboil.sh
 ./05-box-up.sh
@@ -9,6 +26,4 @@ cd `dirname $0`
 #need to wait for box to be ready for login here
 
 ./06-box-setup.sh
-# ./07-mesh-setup.sh
-# ./08-mesh-app.sh
 ./09-box-down.sh
