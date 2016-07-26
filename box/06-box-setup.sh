@@ -23,7 +23,7 @@ echo " updating apt info and sites"
 #./ssh " sudo rpi-update "
 
 echo " installing lots of packages we will need later "
-./ssh " sudo apt-get -y install aptitude sudo nano byobu git gcc build-essential cmake pkg-config libnl-genl-3-dev wireless-tools firmware-ralink kbd raspi-config lynx curl traceroute dbus consolekit input-utils wavemon dstat mercurial libnss-mdns alsa-utils raspi-config "
+./ssh " sudo apt-get -y install aptitude sudo nano byobu git gcc build-essential cmake pkg-config libnl-genl-3-dev wireless-tools firmware-ralink kbd raspi-config lynx curl traceroute dbus consolekit input-utils wavemon dstat mercurial libnss-mdns alsa-utils "
 
 echo " remove some things that we really don't want to write to the sd card all the time "
 ./ssh " sudo apt-get -y remove --purge triggerhappy logrotate dbus dphys-swapfile "
@@ -34,6 +34,3 @@ echo " replace log system "
 
 echo " installing dev tools needed for later building "
 ./ssh " sudo apt-get -y install git gcc build-essential cmake pkg-config libnl-genl-3-dev "
-
-
-
