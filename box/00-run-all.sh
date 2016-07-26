@@ -19,7 +19,6 @@ if [ $skip_host -eq 0 ]
     then
         ./01-host-install.sh
 fi
-exit 0
 ./02-download.sh
 ./03-box-init.sh
 ./04-box-softboil.sh
