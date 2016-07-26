@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cd `dirname $0`
 
 skip_host=0
@@ -5,7 +7,7 @@ skip_host=0
 while getopts "hs" opt; do
     case "$opt" in
     h|\?)
-        echo "Help you!"
+        echo "Help you!" #TODO proper help
         exit 0
         ;;
     s)  skip_host=1
