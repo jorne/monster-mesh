@@ -107,49 +107,49 @@ snd-bcm2835
 EOF
 
 #enable usb mic
-sudo tee root/etc/asound.conf >/dev/null <<EOF
-
-pcm.usb
-{
-    type hw
-    card Device
-}
-
-pcm.internal
-{
-    type hw
-    card ALSA
-}
-
-pcm.!default
-{
-    type asym
-    playback.pcm
-    {
-        type plug
-        slave.pcm "internal"
-    }
-    capture.pcm
-    {
-        type plug
-        slave.pcm "usb"
-    }
-}
-
-ctl.!default
-{
-    type asym
-    playback.pcm
-    {
-        type plug
-        slave.pcm "internal"
-    }
-    capture.pcm
-    {
-        type plug
-        slave.pcm "usb"
-    }
-}
+# sudo tee root/etc/asound.conf >/dev/null <<EOF
+#
+# pcm.usb
+# {
+#     type hw
+#     card Device
+# }
+#
+# pcm.internal
+# {
+#     type hw
+#     card ALSA
+# }
+#
+# pcm.!default
+# {
+#     type asym
+#     playback.pcm
+#     {
+#         type plug
+#         slave.pcm "internal"
+#     }
+#     capture.pcm
+#     {
+#         type plug
+#         slave.pcm "usb"
+#     }
+# }
+#
+# ctl.!default
+# {
+#     type asym
+#     playback.pcm
+#     {
+#         type plug
+#         slave.pcm "internal"
+#     }
+#     capture.pcm
+#     {
+#         type plug
+#         slave.pcm "usb"
+#     }
+# }
 
 
 EOF
