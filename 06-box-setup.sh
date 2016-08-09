@@ -38,7 +38,7 @@ echo " installing lots of packages we will need later "
 
 #### Install custom apps ####
 # Runs all .sh scripts in the install_scripts folder. Note: scripts must be executable.
-for SCRIPT in install_scripts/*.sh
+for SCRIPT in $(ls install_scripts/*.sh)
 	do
 		if [ -f $SCRIPT -a -x $SCRIPT ]
 		then
