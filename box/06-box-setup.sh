@@ -26,7 +26,7 @@ echo " installing dev tools needed for later building "
 ./ssh " sudo apt-get -y install git gcc build-essential cmake pkg-config libnl-genl-3-dev "
 
 echo " installing lots of packages we will need later "
-./ssh " sudo apt-get -y install aptitude sudo vim byobu wireless-tools firmware-ralink kbd raspi-config lynx curl input-utils wavemon dstat libnss-mdns "
+./ssh " sudo apt-get -y install vim byobu lynx input-utils wavemon dstat "
 
 #echo " remove some things that we really don't want to write to the sd card all the time "
 #./ssh " sudo apt-get -y remove --purge triggerhappy logrotate dbus dphys-swapfile "
@@ -34,3 +34,14 @@ echo " installing lots of packages we will need later "
 
 #echo " replace log system "
 #./ssh " sudo apt-get -y install busybox-syslogd; sudo dpkg --purge rsyslog "
+
+
+#### Install custom apps ####
+# Runs all .sh scripts in the install_scripts folder. Note: scripts must be executable.
+for SCRIPT in install_scripts/*.sh
+	do
+		if [ -f $SCRIPT -a -x $SCRIPT ]
+		then
+			$SCRIPT
+		fi
+	done
